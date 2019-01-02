@@ -29,4 +29,8 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-data-rest')
     runtimeOnly('org.springframework.boot:spring-boot-devtools')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
+    
+    //Para enviar correo
+    compile 'com.sendgrid:sendgrid-java:4.0.1'
+
 }
