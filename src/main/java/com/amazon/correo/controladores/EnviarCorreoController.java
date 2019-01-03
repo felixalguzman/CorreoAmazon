@@ -17,12 +17,14 @@ import java.io.IOException;
 public class EnviarCorreoController {
 
     @PostMapping("nuevoCliente")
-    public ResponseEntity registroCliente(@RequestBody Cliente cliente){
+    public ResponseEntity registroCliente(@RequestBody Cliente cliente) {
 
         Email from = new Email("drand@amazon.com");
-        String subject = "Bienvenido "+cliente.getNombre() + " a Drand";
+        String subject = "Bienvenido " + cliente.getNombre() + " a Drand";
         Email to = new Email(cliente.getCorreo());
-        Content content = new Content("text/plain", " \n Para acceder a su cuenta debe entrar a drand.me y acceder con su correo: " + cliente.getCorreo() + " y su contraseña: " + cliente.getContrasena());
+        Content content = new Content("text/plain",
+                " \n Para acceder a su cuenta debe entrar a drand.me y acceder con su correo: " + cliente.getCorreo()
+                        + " y su contraseña: " + cliente.getContrasena());
         Mail mail = new Mail(from, subject, to, content);
 
         SendGrid sg = new SendGrid(System.getenv("SENDGRID_API_KEY"));
@@ -42,8 +44,6 @@ public class EnviarCorreoController {
                 e.printStackTrace();
             }
         }
-
-
 
         return new ResponseEntity(HttpStatus.OK);
     }

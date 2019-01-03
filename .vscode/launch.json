@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-CorreoApplication<correo>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.amazon.correo.CorreoApplication",
+            "projectName": "correo",
+            "args": ""
+        }
+    ]
+}
